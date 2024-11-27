@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Correo</ion-label>
+    <ion-input [(ngModel)]="email" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input [(ngModel)]="contrasena" type="password"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="login()">Iniciar sesión</ion-button>
+  <ion-button expand="full" (click)="goToRegister()">¿No tienes cuenta? Regístrate</ion-button>
+</ion-content>

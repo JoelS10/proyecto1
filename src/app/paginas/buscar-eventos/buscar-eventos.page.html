@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Buscar Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Filtro de Fecha para Eventos -->
+  <ion-item>
+    <ion-label position="stacked">Filtrar Eventos por Fecha</ion-label>
+    <ion-datetime [(ngModel)]="selectedDate" displayFormat="YYYY-MM-DD"></ion-datetime>
+  </ion-item>
+
+  <ion-button expand="full" (click)="buscarEventos()">Buscar Eventos</ion-button>
+
+  <!-- Lista de Eventos Filtrados -->
+  <ion-list>
+    <ion-item *ngFor="let evento of listaEventos">
+      <ion-label>
+        <h3>{{ evento.titulo }}</h3>
+        <p>{{ evento.descripcion }}</p>
+        <p>{{ evento.fecha_evento | date }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

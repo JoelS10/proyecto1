@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ evento?.evento_id ? 'Editar Evento' : 'Nuevo Evento' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Título</ion-label>
+    <ion-input [(ngModel)]="evento.titulo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Descripción</ion-label>
+    <ion-textarea [(ngModel)]="evento.descripcion"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Fecha</ion-label>
+    <ion-datetime [(ngModel)]="evento.fecha_evento"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Categoría</ion-label>
+    <ion-select [(ngModel)]="evento.tipo">
+      <ion-select-option value="trabajo">Trabajo</ion-select-option>
+      <ion-select-option value="personal">Personal</ion-select-option>
+      <ion-select-option value="estudio">Estudio</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="guardarEvento()">Guardar</ion-button>
+</ion-content>

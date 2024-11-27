@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Buscar Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Filtrar Tareas por Prioridad</ion-label>
+    <ion-select [(ngModel)]="selectedPriority">
+      <ion-select-option *ngFor="let prioridad of prioridades" [value]="prioridad.id">
+        {{ prioridad.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="buscarTareas()">Buscar Tareas</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let tarea of listaTareas">
+      <ion-label>
+        <h3>{{ tarea.titulo }}</h3>
+        <p>{{ tarea.descripcion }}</p>
+        <p>{{ tarea.fecha_vencimiento | date }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
